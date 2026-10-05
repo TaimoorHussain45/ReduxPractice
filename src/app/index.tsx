@@ -12,7 +12,7 @@ import {
 export default function App() {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.counter.value);
-  console.log("count", count);
+  // console.log("count", count);
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>{count}</Text>
@@ -26,6 +26,7 @@ export default function App() {
         <TouchableOpacity
           style={styles.button}
           onPress={() => dispatch(decrements())}
+          disabled={count === 0 ? true : false}
         >
           <Text>Decrement</Text>
         </TouchableOpacity>
